@@ -1,4 +1,4 @@
-# vuejs-route
+# vuejs-giphy
 
 > A Vue.js project using vue router and axios
 
