@@ -22,77 +22,45 @@
     </div>
     <div v-for="(gif, index) in this.info" :key="index" class="body-home">
       <div class="box-gif">
-        <img :src="gif.images.fixed_height.url" alt>
+        <img :src="gif.images.fixed_height.url">
+        <i class="fa fa-star"></i>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-const axios = require("axios");
+const axios = require('axios')
 
 export default {
-  name: "Home",
+  name: 'Home',
   props: {
-    searchBox: { type: String, default: "gifs" },
-    numberOfResults: { type: String, default: "5" }
+    searchBox: { type: String, default: 'gifs' },
+    numberOfResults: { type: String, default: '5' }
   },
   data: () => ({
     info: null
   }),
-  mounted() {
-    this.getByInput();
+  mounted () {
+    this.getByInput()
   },
 
   methods: {
-    getByInput() {
-      this.transformString();
+    getByInput () {
+      this.transformString()
       axios
         .get(
-          `http://api.giphy.com/v1/gifs/search?q=${
+          `https://api.giphy.com/v1/gifs/search?q=${
             this.searchBox
           }&api_key=1XBSXCdDRqdJagR2YYUOcF6pmNeXSJKx&limit=${
             this.numberOfResults
           }`
         )
-        .then(response => (this.info = response.data.data));
+        .then(response => (this.info = response.data.data))
     },
-    transformString() {
-      this.searchBox = this.searchBox.replace(" ", "+");
+    transformString () {
+      this.searchBox = this.searchBox.replace(' ', '+')
     }
   }
-};
+}
 </script>
-
-<style lang="scss">
-.body-home {
-  display: inline-flex;
-  max-width: 100%;
-  .box-gif {
-    width: 35%;
-    img {
-      padding: 1em 2em;
-      border-radius: 8%;
-      max-height: 100px;
-      &:hover {
-        box-shadow: 2px 2px 8px gray;
-        cursor: pointer;
-        padding: 0em 0em;
-        max-height: 120px;
-      }
-    }
-  }
-}
-.search-box {
-  input {
-    font-size: 18px;
-    padding: 8px;
-    width: 250px;
-    height: 30px;
-    text-align: center;
-    border: none;
-    border-radius: 8px;
-  }
-  margin-bottom: 50px;
-}
-</style>

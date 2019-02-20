@@ -1,8 +1,8 @@
 <template>
   <div class="nav-bar">
     <ul class="nav">
-     <router-link class="nav-item" to="/home">Home</router-link>
-      <router-link class="nav-item" to="/list">Favoritos</router-link>
+      <router-link class="nav-item" to="/home"><i class="fa fa-home"></i> Home</router-link>
+      <router-link class="nav-item" to="/list"><i class="fa fa-star"></i> Favoritos</router-link>
     </ul>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
     display: flex;
     .nav-item {
       color: white;
-      font-family: 'Open Sans', sans-serif;
+      font-family: "Open Sans", sans-serif;
       padding: 0.5em 3em;
       text-decoration: none;
       &:hover {

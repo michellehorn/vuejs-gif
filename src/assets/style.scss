@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Raleway|Sarabun");
 
+// Alignment
 .form-inline {
   display: inline;
   margin: 8px;
@@ -10,6 +11,8 @@
 .text-left {
   text-align: left;
 }
+
+// Button
 .btn {
   height: 48px;
   border: 3px solid transparent;
@@ -27,15 +30,120 @@
       color: whitesmoke;
       background-color: rgb(30, 59, 59);
     }
+    &:active,
+    &:focus {
+      outline: none;
+    }
   }
 }
+
+// Fonts
 .f-tillium {
   font-family: "Tillium Web" "sans serif";
 }
 .f-montserrat {
-  font-family: 'Montserrat', 'sans serif';
+  font-family: "Montserrat", "sans serif";
 }
 
 .p-1 {
   padding: 10px;
+}
+
+// Base
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: rgb(231, 229, 229);
+}
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin: 0;
+  left: 0;
+  .body {
+    position: static;
+    margin: 0;
+    padding: 0;
+    padding-top: 5em;
+  }
+}
+
+// Home component
+
+.body-home {
+  display: inline-flex;
+  .box-gif {
+    position: relative;
+    width: 20%;
+    img {
+      margin: 1em 2em;
+      &:hover {
+        box-shadow: 2px 2px 8px gray;
+        opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+
+    i {
+      position: absolute;
+      visibility: hidden;
+      font-size: 30px;
+      top: 40%;
+      left: 230%;
+      &:hover {
+        color: goldenrod;
+        cursor: pointer;
+      }
+    }
+
+    img:hover ~ i {
+      color: goldenrod;
+      visibility: visible;
+      cursor: pointer;
+    }
+  }
+}
+
+// Input search
+
+.search-box {
+  input {
+    font-size: 18px;
+    padding: 8px;
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    border-radius: 0;
+    background-color: transparent;
+    &:active,
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid gray;
+      border-radius: 0;
+    }
+  }
+  margin-bottom: 50px;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
 }
