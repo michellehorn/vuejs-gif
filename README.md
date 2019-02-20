@@ -1,6 +1,6 @@
 # vuejs-route
 
-> A Vue.js project using xue router and axios
+> A Vue.js project using vue router and axios
 
 ## [Live demo](https://vuejs-giphy.firebaseapp.com/#/)
 
